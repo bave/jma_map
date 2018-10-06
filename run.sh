@@ -46,7 +46,7 @@ wget -i list
 cd ${base}
 
 cd ./suigai
-sh ./del_png.sh
+#sh ./del_png.sh
 #python list.py ${xs} ${xe} ${ys} ${ye} ${zoom} > list
 #wget -i list
 cd ${base}
