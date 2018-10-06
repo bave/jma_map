@@ -3,14 +3,17 @@
 import sys
 import time
 
+from pytz import timezone
+from datetime import datetime
+
 if len(sys.argv) != 6:
     print(sys.argv[0],"[x_min] [x_max] [y_min] [y_max] [zoom]",)
     sys.exit(1)
 
-prefix=time.strftime("%Y%m%d%H", time.gmtime())+'%02i'
-m = int(time.strftime("%M", time.gmtime()))
-m = m - (m%10) - 10
-now = prefix%(m)
+d = datetime.datetime.now() - datetime.timedelta(minutes=10)
+m = int(d.strftime("%M"))
+m = m - (m%10)
+now = d.strftime("%Y%m%d%H") + str(m)
 
 path = "https://www.jma.go.jp/jp/kaikotan/kaikotan_tile/KAIKOTAN10M/%s/%s/zoom%i/%i_%i.png"
 
