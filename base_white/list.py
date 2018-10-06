@@ -6,4 +6,4 @@ path = "https://www.jma.go.jp/jp/commonmesh/map_tile/MAP_WHITE/none/none/zoom%i/
 
 for i in range(int(sys.argv[1]), int(sys.argv[2])):
     for j in range(int(sys.argv[3]), int(sys.argv[4])):
-        print(path%(sys.argv[5], i,j))
+        print(path%(int(sys.argv[5]), i,j))
